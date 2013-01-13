@@ -1,0 +1,785 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSManagedObject(NNNData) Category Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">NNData </a></h1>
+				<a id="developerHome" href="../index.html">Tomaz Nedeljko</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSManagedObject(NNNData) Category Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/controllerWithPredicate:sortDescriptors:sectionNameKeyPath:cacheName:delegate:context:">&nbsp;&nbsp;&nbsp;&nbsp;+ controllerWithPredicate:sortDescriptors:sectionNameKeyPath:cacheName:delegate:context:</option>
+	
+	<option value="//api/name/entityDescriptionInContext:">&nbsp;&nbsp;&nbsp;&nbsp;+ entityDescriptionInContext:</option>
+	
+	<option value="//api/name/entityName">&nbsp;&nbsp;&nbsp;&nbsp;+ entityName</option>
+	
+	<option value="//api/name/newObjectInContext:">&nbsp;&nbsp;&nbsp;&nbsp;+ newObjectInContext:</option>
+	
+	<option value="//api/name/request">&nbsp;&nbsp;&nbsp;&nbsp;+ request</option>
+	
+	<option value="//api/name/requestWithPredicate:sortDescriptors:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestWithPredicate:sortDescriptors:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/inContext:">&nbsp;&nbsp;&nbsp;&nbsp;- inContext:</option>
+	
+	<option value="//api/name/managedObjectModel">&nbsp;&nbsp;&nbsp;&nbsp;- managedObjectModel</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating Managed Objects">Creating Managed Objects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting Object Information">Getting Object Information</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating Fetch Requests">Creating Fetch Requests</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating Fetch Results Controllers">Creating Fetch Results Controllers</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/controllerWithPredicate:sortDescriptors:sectionNameKeyPath:cacheName:delegate:context:">controllerWithPredicate:sortDescriptors:sectionNameKeyPath:cacheName:delegate:context:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/entityDescriptionInContext:">entityDescriptionInContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/entityName">entityName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newObjectInContext:">newObjectInContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/request">request</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestWithPredicate:sortDescriptors:">requestWithPredicate:sortDescriptors:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/inContext:">inContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/managedObjectModel">managedObjectModel</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSManagedObject(NNNData) Category Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSManagedObject(NNNData) Category Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSManagedObject+NNNData.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>NSManagedObject(NNNData)</code> category extends <code>NSManagedObject</code> with a set of utility methods.</p>
+
+<h3>Subclassing Notes</h3>
+
+<p>If the entity name in your managed object model is different than current class name, you should override the <a href="#//api/name/entityName"><code>entityName</code></a> method and return the appropriate name.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Creating Managed Objects" name="task_Creating Managed Objects"></a>
+						<h3 class="subsubtitle task-title">Creating Managed Objects</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/newObjectInContext:">+&nbsp;newObjectInContext:</a></code>
+		<span class="tooltip"><p>Creates a new managed object in specified context.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Getting Object Information" name="task_Getting Object Information"></a>
+						<h3 class="subsubtitle task-title">Getting Object Information</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/inContext:">&ndash;&nbsp;inContext:</a></code>
+		<span class="tooltip"><p>Return current instance representation in a different context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/managedObjectModel">&ndash;&nbsp;managedObjectModel</a></code>
+		<span class="tooltip"><p>Return managed object model for curent instance.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/entityName">+&nbsp;entityName</a></code>
+		<span class="tooltip"><p>Returns the entity name in managed object model represented by the current <code>NSManagedObject</code> subclass. Override this method to return the entity name if different than your <code>NSMAnagedObject</code> subclass name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/entityDescriptionInContext:">+&nbsp;entityDescriptionInContext:</a></code>
+		<span class="tooltip"><p>Returns the entity description represented by the current <code>NSManagedObject</code> subclass.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating Fetch Requests" name="task_Creating Fetch Requests"></a>
+						<h3 class="subsubtitle task-title">Creating Fetch Requests</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/request">+&nbsp;request</a></code>
+		<span class="tooltip"><p>Creates a new fetch request configured with entity name obtained from <a href="#//api/name/entityName"><code>entityName</code></a> method.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestWithPredicate:sortDescriptors:">+&nbsp;requestWithPredicate:sortDescriptors:</a></code>
+		<span class="tooltip"><p>Creates a new fetch <a href="#//api/name/request">request</a> configured with specified predicate, sort descriptors and entity name obtained from <a href="#//api/name/entityName"><code>entityName</code></a> method.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating Fetch Results Controllers" name="task_Creating Fetch Results Controllers"></a>
+						<h3 class="subsubtitle task-title">Creating Fetch Results Controllers</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/controllerWithPredicate:sortDescriptors:sectionNameKeyPath:cacheName:delegate:context:">+&nbsp;controllerWithPredicate:sortDescriptors:sectionNameKeyPath:cacheName:delegate:context:</a></code>
+		<span class="tooltip"><p>Creates a new fetch results controller configured with specified arguments</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/controllerWithPredicate:sortDescriptors:sectionNameKeyPath:cacheName:delegate:context:" title="controllerWithPredicate:sortDescriptors:sectionNameKeyPath:cacheName:delegate:context:"></a>
+	<h3 class="subsubtitle method-title">controllerWithPredicate:sortDescriptors:sectionNameKeyPath:cacheName:delegate:context:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new fetch results controller configured with specified arguments</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFetchedResultsController *)controllerWithPredicate:(NSPredicate *)<em>predicate</em> sortDescriptors:(NSArray *)<em>sortDescriptors</em> sectionNameKeyPath:(NSString *)<em>sectionNameKeyPath</em> cacheName:(NSString *)<em>cacheName</em> delegate:(id&lt;NSFetchedResultsControllerDelegate&gt;)<em>delegate</em> context:(NSManagedObjectContext *)<em>context</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicate</em></dt>
+			<dd><p>Predicate for the fetched results controller <a href="#//api/name/request">request</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sortDescriptors</em></dt>
+			<dd><p>Sort descriptors for the fetched results controller <a href="#//api/name/request">request</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sectionNameKeyPath</em></dt>
+			<dd><p>A key path on result objects that returns the section name. Pass <code>nil</code> to indicate that the controller should generate a single section.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cacheName</em></dt>
+			<dd><p>The name of the cache file the receiver should use. Pass <code>nil</code> to prevent caching.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>context</em></dt>
+			<dd><p>The managed object context against which <em>fetchRequest</em> is executed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initalized <code>NSFetchedResultsController</code> object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+NNNData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/entityDescriptionInContext:" title="entityDescriptionInContext:"></a>
+	<h3 class="subsubtitle method-title">entityDescriptionInContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the entity description represented by the current <code>NSManagedObject</code> subclass.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)<em>context</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <code>NSEntityDescription</code> instance.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+NNNData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/entityName" title="entityName"></a>
+	<h3 class="subsubtitle method-title">entityName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the entity name in managed object model represented by the current <code>NSManagedObject</code> subclass. Override this method to return the entity name if different than your <code>NSMAnagedObject</code> subclass name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)entityName</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <code>NSString</code> instance.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+NNNData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newObjectInContext:" title="newObjectInContext:"></a>
+	<h3 class="subsubtitle method-title">newObjectInContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new managed object in specified context.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)newObjectInContext:(NSManagedObjectContext *)<em>context</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>context</em></dt>
+			<dd><p>Managed object context to create the object in.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initialized <code>NSManagedObject</code> instance.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+NNNData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/request" title="request"></a>
+	<h3 class="subsubtitle method-title">request</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new fetch request configured with entity name obtained from <a href="#//api/name/entityName"><code>entityName</code></a> method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFetchRequest *)request</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initalized <code>NSFetchRequest</code> object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+NNNData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestWithPredicate:sortDescriptors:" title="requestWithPredicate:sortDescriptors:"></a>
+	<h3 class="subsubtitle method-title">requestWithPredicate:sortDescriptors:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new fetch <a href="#//api/name/request">request</a> configured with specified predicate, sort descriptors and entity name obtained from <a href="#//api/name/entityName"><code>entityName</code></a> method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSFetchRequest *)requestWithPredicate:(NSPredicate *)<em>predicate</em> sortDescriptors:(NSArray *)<em>sortDescriptors</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicate</em></dt>
+			<dd><p>Predicate for the fetch <a href="#//api/name/request">request</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sortDescriptors</em></dt>
+			<dd><p>Sort descriptors for fetch <a href="#//api/name/request">request</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initalized <code>NSFetchRequest</code> object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+NNNData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/inContext:" title="inContext:"></a>
+	<h3 class="subsubtitle method-title">inContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return current instance representation in a different context.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)inContext:(NSManagedObjectContext *)<em>context</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>context</em></dt>
+			<dd><p>Managed object context to obtain the current instance in.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <code>NSManagedObject</code> instance or <code>nil</code> if it does not exist in <em>context</em>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+NNNData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/managedObjectModel" title="managedObjectModel"></a>
+	<h3 class="subsubtitle method-title">managedObjectModel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return managed object model for curent instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSManagedObjectModel *)managedObjectModel</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <code>NSManagedObjectModel</code> instance.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+NNNData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Tomaz Nedeljko. All rights reserved. (Last updated: 2013-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
