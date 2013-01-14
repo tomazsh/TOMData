@@ -1,6 +1,6 @@
 //
-//  NNNDataErrorHandler.h
-//  NNNData
+//  TOMDataErrorHandler.h
+//  TOMData
 //
 //  Copyright (c) 2013 Tomaz Nedeljko (http://nedeljko.com)
 //
@@ -25,12 +25,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^NNNDataErrorHandlingBlock)(NSError *error);
+typedef void(^TOMDataErrorHandlingBlock)(NSError *error);
 
 /**
- The `NNDataErrorHandler` is a utility class that enables you to define a single point for handling Core Data errors. It enables you to define an action on a target or a block to be executed when the error occurs.
+ The `TOMDataErrorHandler` is a utility class that enables you to define a single point for handling Core Data errors. It enables you to define an action on a target or a block to be executed when the error occurs.
  */
-@interface NNNDataErrorHandler : NSObject 
+@interface TOMDataErrorHandler : NSObject 
 
 ///----------------------
 /// @name Handling Errors
@@ -49,7 +49,7 @@ typedef void(^NNNDataErrorHandlingBlock)(NSError *error);
  
  @param block A block to be executed when an error occurs. It takes the error as the sole parameter.
  */
-+ (void)setBlock:(NNNDataErrorHandlingBlock)block;
++ (void)setBlock:(TOMDataErrorHandlingBlock)block;
 
 /**
  Handles an error. This method performs the action on the target you have specified through the `setTarget:action:` method. It also executes the block you've set through the `setBlock:` method. If you haven't speficied either, it logs the error.

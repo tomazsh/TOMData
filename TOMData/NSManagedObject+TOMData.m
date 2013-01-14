@@ -1,6 +1,6 @@
 //
-//  NSManagedObject+NNNData.m
-//  NNNData
+//  NSManagedObject+TOMData.m
+//  TOMData
 //
 //  Copyright (c) 2013 Tomaz Nedeljko (http://nedeljko.com)
 //
@@ -23,11 +23,11 @@
 //  THE SOFTWARE.
 //
 
-#import "NNNDataErrorHandler.h"
-#import "NSManagedObject+NNNData.h"
-#import "NSManagedObjectContext+NNNData.h"
+#import "TOMDataErrorHandler.h"
+#import "NSManagedObject+TOMData.h"
+#import "NSManagedObjectContext+TOMData.h"
 
-@implementation NSManagedObject (NNNData)
+@implementation NSManagedObject (TOMData)
 
 #pragma mark -
 #pragma mark Class Methods

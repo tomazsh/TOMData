@@ -1,6 +1,6 @@
 //
-//  NNNData.h
-//  NNNData
+//  TOMData.h
+//  TOMData
 //
 //  Copyright (c) 2013 Tomaz Nedeljko (http://nedeljko.com)
 //
@@ -23,7 +23,7 @@
 //  THE SOFTWARE.
 //
 
-#import "NNNDataErrorHandler.h"
-#import "NSManagedObjectContext+NNNData.h"
-#import "NSManagedObject+NNNData.h"
-#import "NSFetchedResultsController+NNNData.h"
+#import "TOMDataErrorHandler.h"
+#import "NSManagedObjectContext+TOMData.h"
+#import "NSManagedObject+TOMData.h"
+#import "NSFetchedResultsController+TOMData.h"

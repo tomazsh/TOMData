@@ -1,6 +1,6 @@
 //
-//  NNNDataErrorHandler.m
-//  NNNData
+//  TOMDataErrorHandler.m
+//  TOMData
 //
 //  Copyright (c) 2013 Tomaz Nedeljko (http://nedeljko.com)
 //
@@ -23,24 +23,24 @@
 //  THE SOFTWARE.
 //
 
-#import "NNNDataErrorHandler.h"
+#import "TOMDataErrorHandler.h"
 
-@interface NNNDataErrorHandler () {
+@interface TOMDataErrorHandler () {
     @private
     __weak id _target;
     SEL _action;
-    NNNDataErrorHandlingBlock _block;
+    TOMDataErrorHandlingBlock _block;
 }
 
 + (id)_sharedHandler;
 
 @property(weak, nonatomic) id target;
 @property(nonatomic) SEL action;
-@property(copy, nonatomic) NNNDataErrorHandlingBlock block;
+@property(copy, nonatomic) TOMDataErrorHandlingBlock block;
 
 @end
 
-@implementation NNNDataErrorHandler
+@implementation TOMDataErrorHandler
 
 #pragma mark -
 #pragma mark Class Methods
@@ -51,7 +51,7 @@
     [[self _sharedHandler] setAction:action];
 }
 
-+ (void)setBlock:(NNNDataErrorHandlingBlock)block
++ (void)setBlock:(TOMDataErrorHandlingBlock)block
 {
     [[self _sharedHandler] setBlock:block];
 }
@@ -62,7 +62,7 @@
         return;
     }
     
-    NNNDataErrorHandler *handler = [[self class] _sharedHandler];
+    TOMDataErrorHandler *handler = [[self class] _sharedHandler];
     dispatch_async(dispatch_get_main_queue(), ^{
         NSError *errorCopy = [error copy];
             
@@ -74,7 +74,7 @@
         }
             
         if ([[[self class] _sharedHandler] block]) {
-            NNNDataErrorHandler *sharedHandler = [[self class] _sharedHandler];
+            TOMDataErrorHandler *sharedHandler = [[self class] _sharedHandler];
             sharedHandler.block(errorCopy);
         }
             
@@ -89,10 +89,10 @@
 
 + (id)_sharedHandler
 {
-    static NNNDataErrorHandler *SharedHandler = nil;
+    static TOMDataErrorHandler *SharedHandler = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        SharedHandler = [[NNNDataErrorHandler alloc] init];
+        SharedHandler = [[TOMDataErrorHandler alloc] init];
     });
     return SharedHandler;
 }

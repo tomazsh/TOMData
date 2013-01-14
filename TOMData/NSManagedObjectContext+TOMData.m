@@ -1,6 +1,6 @@
 //
-//  NSManagedObjectContext+NNNData.m
-//  NNNData
+//  NSManagedObjectContext+TOMData.m
+//  TOMData
 //
 //  Copyright (c) 2013 Tomaz Nedeljko (http://nedeljko.com)
 //
@@ -23,8 +23,8 @@
 //  THE SOFTWARE.
 //
 
-#import "NNNDataErrorHandler.h"
-#import "NSManagedObjectContext+NNNData.h"
+#import "TOMDataErrorHandler.h"
+#import "NSManagedObjectContext+TOMData.h"
 
 @implementation NSManagedObjectContext (NNData)
 
@@ -68,7 +68,7 @@
 #pragma mark -
 #pragma mark Instance Methods
 
-- (BOOL)nnn_save
+- (BOOL)TOM_save
 {
     NSError *error = nil;
     BOOL saved = NO;
@@ -80,7 +80,7 @@
     }
     @finally {
         if (!saved && error) {
-            [NNNDataErrorHandler handleError:error];
+            [TOMDataErrorHandler handleError:error];
         }
     }
     return saved;
@@ -99,13 +99,13 @@
 {
     __block BOOL saved = NO;
     [self performBlockAndWait:^{
-        saved = [self nnn_save];
+        saved = [self TOM_save];
     }];
     
     __weak NSManagedObjectContext *rootContext = [[self class] rootContext];
     if ([self parentContext] == rootContext) {
         [rootContext performBlockAndWait:^{
-            saved = saved && [rootContext nnn_save];
+            saved = saved && [rootContext TOM_save];
         }];
     }
     
@@ -145,7 +145,7 @@
         }
         @finally {
             if (!results && error) {
-                [NNNDataErrorHandler handleError:error];
+                [TOMDataErrorHandler handleError:error];
             }
         }
     }];
@@ -165,7 +165,7 @@
         }
         @finally {
             if (count == NSNotFound && error) {
-                [NNNDataErrorHandler handleError:error];
+                [TOMDataErrorHandler handleError:error];
             }
         }
     }];
@@ -185,7 +185,7 @@
         }
         @finally {
             if (!object && error) {
-                [NNNDataErrorHandler handleError:error];
+                [TOMDataErrorHandler handleError:error];
             }
         }
     }];

@@ -1,6 +1,6 @@
 //
-//  NSManagedObject+NNNData.h
-//  NNNData
+//  NSManagedObject+TOMData.h
+//  TOMData
 //
 //  Copyright (c) 2013 Tomaz Nedeljko (http://nedeljko.com)
 //
@@ -27,14 +27,14 @@
 #import <CoreData/CoreData.h>
 
 /**
- The `NSManagedObject(NNNData)` category extends `NSManagedObject` with a set of utility methods.
+ The `NSManagedObject(TOMData)` category extends `NSManagedObject` with a set of utility methods.
  
  ### Subclassing Notes
  
  If the entity name in your managed object model is different than current class name, you should override the `entityName` method and return the appropriate name.
  
  */
-@interface NSManagedObject (NNNData)
+@interface NSManagedObject (TOMData)
 
 /// ------------------------------
 /// @name Creating Managed Objects

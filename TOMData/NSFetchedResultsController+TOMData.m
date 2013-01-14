@@ -1,6 +1,6 @@
 //
-//  NSFetchedResultsController+NNNData.m
-//  NNNData
+//  NSFetchedResultsController+TOMData.m
+//  TOMData
 //
 //  Copyright (c) 2013 Tomaz Nedeljko (http://nedeljko.com)
 //
@@ -23,10 +23,10 @@
 //  THE SOFTWARE.
 //
 
-#import "NSFetchedResultsController+NNNData.h"
-#import "NNNDataErrorHandler.h"
+#import "NSFetchedResultsController+TOMData.h"
+#import "TOMDataErrorHandler.h"
 
-@implementation NSFetchedResultsController (NNNData)
+@implementation NSFetchedResultsController (TOMData)
 
 - (BOOL)performFetch
 {
@@ -41,7 +41,7 @@
         }
         @finally {
             if (!fetched && error) {
-                [NNNDataErrorHandler handleError:error];
+                [TOMDataErrorHandler handleError:error];
             }
         }
     }];
@@ -61,7 +61,7 @@
         }
         @finally {
             if (!fetched && error) {
-                [NNNDataErrorHandler handleError:error];
+                [TOMDataErrorHandler handleError:error];
             }
         }
         dispatch_sync(dispatch_get_main_queue(), ^{

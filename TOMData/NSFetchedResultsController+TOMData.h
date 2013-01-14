@@ -1,6 +1,6 @@
 //
-//  NSFetchedResultsController+NNNData.h
-//  NNNData
+//  NSFetchedResultsController+TOMData.h
+//  TOMData
 //
 //  Copyright (c) 2013 Tomaz Nedeljko (http://nedeljko.com)
 //
@@ -27,23 +27,23 @@
 #import <CoreData/CoreData.h>
 
 /**
- The `NSFetchedResultsController(NNNData)` category extends `NSFetchedResultsController` with a set of utility methods.
+ The `NSFetchedResultsController(TOMData)` category extends `NSFetchedResultsController` with a set of utility methods.
  */
-@interface NSFetchedResultsController (NNNData)
+@interface NSFetchedResultsController (TOMData)
 
 ///---------------
 /// @name Fetching
 ///---------------
 
 /**
- Executes the receiver’s fetch request. If the fetch is not successful it handles the error through `NNNDataHelper` registered error handler.
+ Executes the receiver’s fetch request. If the fetch is not successful it handles the error through `TOMDataErrorHandler` registered error handler.
  
  @return `YES` if the fetch executed successfully, otherwise `NO`.
 */
 - (BOOL)performFetch;
 
 /**
- Asynchronously executes the receiver’s fetch request. If the fetch is not successful it handles the error through `NNNDataHelper` registered error handler.
+ Asynchronously executes the receiver’s fetch request. If the fetch is not successful it handles the error through `TOMDataErrorHandler` registered error handler.
  
  @param completed A block object to be executed when the fetch finishes. This block has no return value and takes one argument: a boolean value, indicating if fetch was successful.
  */

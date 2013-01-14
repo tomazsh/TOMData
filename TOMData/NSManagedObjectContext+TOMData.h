@@ -1,6 +1,6 @@
 //
-//  NSManagedObjectContext+NNNData.h
-//  NNNData
+//  NSManagedObjectContext+TOMData.h
+//  TOMData
 //
 //  Copyright (c) 2013 Tomaz Nedeljko (http://nedeljko.com)
 //
@@ -27,7 +27,7 @@
 #import <CoreData/CoreData.h>
 
 /**
- The `NSManagedObjectContext(NNNData)` category extends `NSManagedObjectContext` with a set of utility methods.
+ The `NSManagedObjectContext(TOMData)` category extends `NSManagedObjectContext` with a set of utility methods.
  
  ### Using the Predefined Managed Object Contexts
  
@@ -36,7 +36,7 @@
  For main queue interaction you can utilize the `mainContext`, which is a direct child of `rootContext` that operates on main queue. You will probably be interactiong with this context the most as it should be used for all user interface operations. Saving `mainContext` does however not automatically persist changes. To save changes to your persistent stores, be sure to use `saveWithParentContext` or `saveWithParentContexts` methods.
  
  */
-@interface NSManagedObjectContext (NNNData)
+@interface NSManagedObjectContext (TOMData)
 
 ///-------------------------------------------
 /// @name Interacting with Predefined Contexts
