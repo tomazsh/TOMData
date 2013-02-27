@@ -30,7 +30,8 @@
 
 - (BOOL)performFetch
 {
-    __block BOOL fetched;
+    __block BOOL fetched = NO;
+
     [[self managedObjectContext] performBlockAndWait:^{
         NSError *error = nil;
         @try {
@@ -45,31 +46,8 @@
             }
         }
     }];
+    
     return fetched;
-}
-
-- (void)performFetchCompleted:(void (^)(BOOL success))completed
-{
-    [[self managedObjectContext] performBlock:^{
-        NSError *error = nil;
-        BOOL fetched = NO;
-        @try {
-            fetched = [self performFetch:&error];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"Unable to perform fetch: %@", (id)[exception userInfo] ?: (id)[exception reason]);
-        }
-        @finally {
-            if (!fetched && error) {
-                [TOMDataErrorHandler handleError:error];
-            }
-        }
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            if (completed) {
-                completed(fetched);
-            }
-        });
-    }];
 }
 
 @end

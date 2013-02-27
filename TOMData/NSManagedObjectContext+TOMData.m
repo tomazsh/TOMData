@@ -26,31 +26,32 @@
 #import "TOMDataErrorHandler.h"
 #import "NSManagedObjectContext+TOMData.h"
 
-@implementation NSManagedObjectContext (NNData)
+static NSManagedObjectContext *tom_rootContext = nil;
+static NSManagedObjectContext *tom_mainContext = nil;
+
+@implementation NSManagedObjectContext (TOMData)
 
 #pragma mark -
 #pragma mark Class Methods
 
 + (NSManagedObjectContext *)rootContext
 {
-    static NSManagedObjectContext *RootContext = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        RootContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-        [RootContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+        tom_rootContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        [tom_rootContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
     });
-    return RootContext;
+    return tom_rootContext;
 }
 
 + (NSManagedObjectContext *)mainContext
 {    
-    static NSManagedObjectContext *MainContext = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        MainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        [MainContext setParentContext:[self rootContext]];
+        tom_mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+        [tom_mainContext setParentContext:[self rootContext]];
     });
-    return MainContext;
+    return tom_mainContext;
 }
 
 + (NSManagedObjectContext *)childContextWithMainContext
@@ -68,8 +69,12 @@
 #pragma mark -
 #pragma mark Instance Methods
 
-- (BOOL)TOM_save
+- (BOOL)tom_save
 {
+    if (![self hasChanges]) {
+        return NO;
+    }
+    
     NSError *error = nil;
     BOOL saved = NO;
     @try {
@@ -99,13 +104,12 @@
 {
     __block BOOL saved = NO;
     [self performBlockAndWait:^{
-        saved = [self TOM_save];
+        saved = [self tom_save];
     }];
     
-    __weak NSManagedObjectContext *rootContext = [[self class] rootContext];
-    if ([self parentContext] == rootContext) {
-        [rootContext performBlockAndWait:^{
-            saved = saved && [rootContext TOM_save];
+    if ([self parentContext] == tom_rootContext && [[[tom_rootContext persistentStoreCoordinator] persistentStores] count]) {
+        [tom_rootContext performBlockAndWait:^{
+            saved = saved && [tom_rootContext tom_save];
         }];
     }
     
@@ -115,7 +119,7 @@
 - (BOOL)saveWithParentContext
 {
     BOOL saved  = [self save];
-    if ([self parentContext] != [[self class] rootContext]) {
+    if ([self parentContext] != tom_rootContext) {
         saved = saved && [[self parentContext] save];
     }
     return saved;
@@ -124,7 +128,7 @@
 - (BOOL)saveWithParentContexts
 {
     BOOL saved = [self save];
-    if ([self parentContext] != [[self class] rootContext]) {
+    if ([self parentContext] != tom_rootContext) {
         saved = saved && [[self parentContext] saveWithParentContexts];
     }
     return saved;

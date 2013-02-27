@@ -42,11 +42,4 @@
 */
 - (BOOL)performFetch;
 
-/**
- Asynchronously executes the receiver’s fetch request. If the fetch is not successful it handles the error through `TOMDataErrorHandler` registered error handler.
- 
- @param completed A block object to be executed when the fetch finishes. This block has no return value and takes one argument: a boolean value, indicating if fetch was successful.
- */
-- (void)performFetchCompleted:(void (^)(BOOL success))completed;
-
 @end
