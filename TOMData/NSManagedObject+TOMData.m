@@ -32,7 +32,7 @@
 #pragma mark -
 #pragma mark Class Methods
 
-+ (id)tom_newObjectInContext:(NSManagedObjectContext *)context
++ (instancetype)tom_newObjectInContext:(NSManagedObjectContext *)context
 {
     return [NSEntityDescription insertNewObjectForEntityForName:[self tom_entityName] inManagedObjectContext:context];
 }

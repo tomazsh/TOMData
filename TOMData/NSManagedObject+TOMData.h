@@ -47,7 +47,7 @@
  
  @return An initialized `NSManagedObject` instance.
  */
-+ (id)tom_newObjectInContext:(NSManagedObjectContext *)context;
++ (instancetype)tom_newObjectInContext:(NSManagedObjectContext *)context;
 
 /**
  Deletes the receiver from its managed object context.
