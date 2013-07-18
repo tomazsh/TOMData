@@ -111,6 +111,8 @@
 + (NSFetchRequest *)tom_requestWithPredicate:(NSPredicate *)predicate
                              sortDescriptors:(NSArray *)sortDescriptors;
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+
 /// ----------------------------------------
 /// @name Creating Fetch Results Controllers
 /// ----------------------------------------
@@ -132,5 +134,7 @@
                                                   cacheName:(NSString *)cacheName
                                                    delegate:(id<NSFetchedResultsControllerDelegate>)delegate
                                                     context:(NSManagedObjectContext *)context;
+
+#endif
 
 @end

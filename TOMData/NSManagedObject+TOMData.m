@@ -60,6 +60,8 @@
     return request;
 }
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+
 + (NSFetchedResultsController *)tom_controllerWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors sectionNameKeyPath:(NSString *)sectionNameKeyPath cacheName:(NSString *)cacheName delegate:(id<NSFetchedResultsControllerDelegate>)delegate context:(NSManagedObjectContext *)context
 {
     NSFetchRequest *request = [self tom_requestWithPredicate:predicate sortDescriptors:sortDescriptors];
@@ -67,6 +69,8 @@
     controller.delegate = delegate;
     return controller;
 }
+
+#endif
 
 #pragma mark -
 #pragma mark Instance Methods

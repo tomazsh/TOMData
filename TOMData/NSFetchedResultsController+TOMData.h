@@ -26,6 +26,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+
 /**
  The `NSFetchedResultsController(TOMData)` category extends `NSFetchedResultsController` with a set of utility methods.
  */
@@ -43,3 +45,5 @@
 - (BOOL)tom_performFetch;
 
 @end
+
+#endif

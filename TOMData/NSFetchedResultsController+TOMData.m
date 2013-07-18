@@ -26,6 +26,8 @@
 #import "NSFetchedResultsController+TOMData.h"
 #import "TOMDataErrorHandler.h"
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+
 @implementation NSFetchedResultsController (TOMData)
 
 - (BOOL)tom_performFetch
@@ -51,3 +53,5 @@
 }
 
 @end
+
+#endif
