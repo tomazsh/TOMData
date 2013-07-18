@@ -29,9 +29,9 @@
 
 + (instancetype)sharedHandler;
 
-@property(weak, nonatomic) id target;
-@property(nonatomic) SEL action;
-@property(copy, nonatomic) TOMDataErrorHandlingBlock block;
+@property (weak, nonatomic) id target;
+@property (nonatomic) SEL action;
+@property (copy, nonatomic) TOMDataErrorHandlingBlock block;
 
 @end
 
