@@ -62,10 +62,12 @@
         TOMDataErrorHandler *handler = [[self class] sharedHandler];
         
         if (handler.target && handler.action) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            [handler.target performSelector:handler.action withObject:errorCopy];
-#pragma clang diagnostic pop
+            NSMethodSignature *methodSignature = [handler.target methodSignatureForSelector:handler.action];
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
+            [invocation setTarget:handler.target];
+            [invocation setSelector:handler.action];
+            [invocation setArgument:&errorCopy atIndex:0];
+            [invocation invoke];
         }
             
         if (handler.block) {
