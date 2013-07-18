@@ -62,20 +62,19 @@
         return;
     }
     
-    TOMDataErrorHandler *handler = [[self class] _sharedHandler];
     dispatch_async(dispatch_get_main_queue(), ^{
         NSError *errorCopy = [error copy];
-            
+        TOMDataErrorHandler *handler = [[self class] _sharedHandler];
+        
         if (handler.target && handler.action) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            [[[[self class] _sharedHandler] target] performSelector:[[[self class] _sharedHandler] action] withObject:errorCopy];
+            [handler.target performSelector:handler.action withObject:errorCopy];
 #pragma clang diagnostic pop
         }
             
-        if ([[[self class] _sharedHandler] block]) {
-            TOMDataErrorHandler *sharedHandler = [[self class] _sharedHandler];
-            sharedHandler.block(errorCopy);
+        if (handler.block) {
+            handler.block(errorCopy);
         }
             
         if ((!handler.target || !handler.action) && !handler.block) {
