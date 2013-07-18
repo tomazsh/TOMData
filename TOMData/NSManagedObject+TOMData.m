@@ -32,37 +32,37 @@
 #pragma mark -
 #pragma mark Class Methods
 
-+ (id)newObjectInContext:(NSManagedObjectContext *)context
++ (id)tom_newObjectInContext:(NSManagedObjectContext *)context
 {
-    return [NSEntityDescription insertNewObjectForEntityForName:[self entityName] inManagedObjectContext:context];
+    return [NSEntityDescription insertNewObjectForEntityForName:[self tom_entityName] inManagedObjectContext:context];
 }
 
-+ (NSString *)entityName
++ (NSString *)tom_entityName
 {
     return NSStringFromClass(self);
 }
 
-+ (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)context
++ (NSEntityDescription *)tom_entityDescriptionInContext:(NSManagedObjectContext *)context
 {
-    return [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:context];
+    return [NSEntityDescription entityForName:[self tom_entityName] inManagedObjectContext:context];
 }
 
-+ (NSFetchRequest *)request
++ (NSFetchRequest *)tom_request
 {
-    return [NSFetchRequest fetchRequestWithEntityName:[self entityName]];
+    return [NSFetchRequest fetchRequestWithEntityName:[self tom_entityName]];
 }
 
-+ (NSFetchRequest *)requestWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors
++ (NSFetchRequest *)tom_requestWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors
 {
-    NSFetchRequest *request = [self request];
+    NSFetchRequest *request = [self tom_request];
     [request setPredicate:predicate];
     [request setSortDescriptors:sortDescriptors];
     return request;
 }
 
-+ (NSFetchedResultsController *)controllerWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors sectionNameKeyPath:(NSString *)sectionNameKeyPath cacheName:(NSString *)cacheName delegate:(id<NSFetchedResultsControllerDelegate>)delegate context:(NSManagedObjectContext *)context
++ (NSFetchedResultsController *)tom_controllerWithPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors sectionNameKeyPath:(NSString *)sectionNameKeyPath cacheName:(NSString *)cacheName delegate:(id<NSFetchedResultsControllerDelegate>)delegate context:(NSManagedObjectContext *)context
 {
-    NSFetchRequest *request = [self requestWithPredicate:predicate sortDescriptors:sortDescriptors];
+    NSFetchRequest *request = [self tom_requestWithPredicate:predicate sortDescriptors:sortDescriptors];
     NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:sectionNameKeyPath cacheName:cacheName];
     controller.delegate = delegate;
     return controller;
@@ -71,19 +71,19 @@
 #pragma mark -
 #pragma mark Instance Methods
 
-- (void)deleteObject
+- (void)tom_deleteObject
 {
     [[self managedObjectContext] deleteObject:self];
 }
 
-- (id)inContext:(NSManagedObjectContext *)context
+- (id)tom_inContext:(NSManagedObjectContext *)context
 {
     return [context objectWithID:[self objectID]];
 }
 
-- (NSManagedObjectModel *)managedObjectModel
+- (NSManagedObjectModel *)tom_managedObjectModel
 {
-    return [[self managedObjectContext] managedObjectModel];
+    return [[self managedObjectContext] tom_managedObjectModel];
 }
 
 @end

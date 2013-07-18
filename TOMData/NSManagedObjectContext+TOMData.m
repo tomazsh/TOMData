@@ -34,7 +34,7 @@ static NSManagedObjectContext *tom_mainContext = nil;
 #pragma mark -
 #pragma mark Class Methods
 
-+ (NSManagedObjectContext *)rootContext
++ (NSManagedObjectContext *)tom_rootContext
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -44,22 +44,22 @@ static NSManagedObjectContext *tom_mainContext = nil;
     return tom_rootContext;
 }
 
-+ (NSManagedObjectContext *)mainContext
++ (NSManagedObjectContext *)tom_mainContext
 {    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         tom_mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        [tom_mainContext setParentContext:[self rootContext]];
+        [tom_mainContext setParentContext:[self tom_rootContext]];
     });
     return tom_mainContext;
 }
 
-+ (NSManagedObjectContext *)childContextWithMainContext
++ (NSManagedObjectContext *)tom_childContextWithMainContext
 {
-    return [self childContextWithConcurrencyType:NSPrivateQueueConcurrencyType parentContext:[self mainContext]];
+    return [self tom_childContextWithConcurrencyType:NSPrivateQueueConcurrencyType parentContext:[self tom_mainContext]];
 }
 
-+ (NSManagedObjectContext *)childContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)type parentContext:(NSManagedObjectContext *)parentContext
++ (NSManagedObjectContext *)tom_childContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)type parentContext:(NSManagedObjectContext *)parentContext
 {
     NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:type];
     [context setParentContext:parentContext];
@@ -69,7 +69,7 @@ static NSManagedObjectContext *tom_mainContext = nil;
 #pragma mark -
 #pragma mark Instance Methods
 
-- (BOOL)tom_save
+- (BOOL)tom_saveIfNeeded
 {
     if (![self hasChanges]) {
         return NO;
@@ -93,50 +93,50 @@ static NSManagedObjectContext *tom_mainContext = nil;
 
 #pragma mark -
 
-- (NSManagedObjectModel *)managedObjectModel
+- (NSManagedObjectModel *)tom_managedObjectModel
 {
     return [[self persistentStoreCoordinator] managedObjectModel];
 }
 
 #pragma mark -
 
-- (BOOL)save
+- (BOOL)tom_save
 {
     __block BOOL saved = NO;
     [self performBlockAndWait:^{
-        saved = [self tom_save];
+        saved = [self tom_saveIfNeeded];
     }];
     
     if ([self parentContext] == tom_rootContext && [[[tom_rootContext persistentStoreCoordinator] persistentStores] count]) {
         [tom_rootContext performBlockAndWait:^{
-            saved = saved && [tom_rootContext tom_save];
+            saved = saved && [tom_rootContext tom_saveIfNeeded];
         }];
     }
     
     return saved;
 }
 
-- (BOOL)saveWithParentContext
+- (BOOL)tom_saveWithParentContext
 {
-    BOOL saved  = [self save];
+    BOOL saved  = [self tom_save];
     if ([self parentContext] != tom_rootContext) {
-        saved = saved && [[self parentContext] save];
+        saved = saved && [[self parentContext] tom_save];
     }
     return saved;
 }
 
-- (BOOL)saveWithParentContexts
+- (BOOL)tom_saveWithParentContexts
 {
-    BOOL saved = [self save];
+    BOOL saved = [self tom_save];
     if ([self parentContext] != tom_rootContext) {
-        saved = saved && [[self parentContext] saveWithParentContexts];
+        saved = saved && [[self parentContext] tom_saveWithParentContexts];
     }
     return saved;
 }
 
 #pragma mark -
 
-- (NSArray *)executeFetchRequest:(NSFetchRequest *)request
+- (NSArray *)tom_executeFetchRequest:(NSFetchRequest *)request
 {
     __block NSArray *results;
     [self performBlockAndWait:^{
@@ -156,7 +156,7 @@ static NSManagedObjectContext *tom_mainContext = nil;
     return results;
 }
 
-- (NSUInteger)countForFetchRequest:(NSFetchRequest *)request
+- (NSUInteger)tom_countForFetchRequest:(NSFetchRequest *)request
 {
     __block NSUInteger count;
     [self performBlockAndWait:^{
@@ -176,7 +176,7 @@ static NSManagedObjectContext *tom_mainContext = nil;
     return count;
 }
 
-- (NSManagedObject *)existingObjectWithID:(NSManagedObjectID *)objectID
+- (NSManagedObject *)tom_existingObjectWithID:(NSManagedObjectID *)objectID
 {
     __block NSManagedObject *object;
     [self performBlockAndWait:^{
@@ -198,9 +198,9 @@ static NSManagedObjectContext *tom_mainContext = nil;
 
 #pragma mark -
 
-- (void)performBlockWithPrivateContext:(void (^)(NSManagedObjectContext *))block completion:(void (^)())completion
+- (void)tom_performBlockWithPrivateContext:(void (^)(NSManagedObjectContext *))block completion:(void (^)())completion
 {
-    NSManagedObjectContext *privateContext = [[self class] childContextWithConcurrencyType:NSPrivateQueueConcurrencyType parentContext:self];
+    NSManagedObjectContext *privateContext = [[self class] tom_childContextWithConcurrencyType:NSPrivateQueueConcurrencyType parentContext:self];
     [privateContext performBlock:^{
         if (block) {
             block(privateContext);
@@ -213,9 +213,9 @@ static NSManagedObjectContext *tom_mainContext = nil;
     }];
 }
 
-- (void)performBlockWithPrivateContextAndWait:(void (^)(NSManagedObjectContext *))block
+- (void)tom_performBlockWithPrivateContextAndWait:(void (^)(NSManagedObjectContext *))block
 {
-    NSManagedObjectContext *privateContext = [[self class] childContextWithConcurrencyType:NSPrivateQueueConcurrencyType parentContext:self];
+    NSManagedObjectContext *privateContext = [[self class] tom_childContextWithConcurrencyType:NSPrivateQueueConcurrencyType parentContext:self];
     [privateContext performBlockAndWait:^{
         if (block) {
             block(privateContext);

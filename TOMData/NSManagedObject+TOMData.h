@@ -47,8 +47,8 @@
  
  @return An initialized `NSManagedObject` instance.
  */
-+ (id)newObjectInContext:(NSManagedObjectContext *)context;
-- (void)deleteObject;
++ (id)tom_newObjectInContext:(NSManagedObjectContext *)context;
+- (void)tom_deleteObject;
 
 /// --------------------------------
 /// @name Getting Object Information
@@ -61,21 +61,21 @@
  
  @return A `NSManagedObject` instance or `nil` if it does not exist in *context*.
  */
-- (id)inContext:(NSManagedObjectContext *)context;
+- (id)tom_inContext:(NSManagedObjectContext *)context;
 
 /**
  Return managed object model for curent instance.
  
  @return A `NSManagedObjectModel` instance.
  */
-- (NSManagedObjectModel *)managedObjectModel;
+- (NSManagedObjectModel *)tom_managedObjectModel;
 
 /**
  Returns the entity name in managed object model represented by the current `NSManagedObject` subclass. Override this method to return the entity name if different than your `NSMAnagedObject` subclass name.
  
  @return A `NSString` instance.
  */
-+ (NSString *)entityName;
++ (NSString *)tom_entityName;
 
 
 /**
@@ -83,7 +83,7 @@
  
  @return A `NSEntityDescription` instance.
  */
-+ (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)context;
++ (NSEntityDescription *)tom_entityDescriptionInContext:(NSManagedObjectContext *)context;
 
 /// -----------------------------
 /// @name Creating Fetch Requests
@@ -94,7 +94,7 @@
  
  @return An initalized `NSFetchRequest` object.
  */
-+ (NSFetchRequest *)request;
++ (NSFetchRequest *)tom_request;
 
 /**
  Creates a new fetch request configured with specified predicate, sort descriptors and entity name obtained from `entityName` method.
@@ -104,8 +104,8 @@
  
  @return An initalized `NSFetchRequest` object.
  */
-+ (NSFetchRequest *)requestWithPredicate:(NSPredicate *)predicate
-                         sortDescriptors:(NSArray *)sortDescriptors;
++ (NSFetchRequest *)tom_requestWithPredicate:(NSPredicate *)predicate
+                             sortDescriptors:(NSArray *)sortDescriptors;
 
 /// ----------------------------------------
 /// @name Creating Fetch Results Controllers
@@ -122,11 +122,11 @@
  
  @return An initalized `NSFetchedResultsController` object.
  */
-+ (NSFetchedResultsController *)controllerWithPredicate:(NSPredicate *)predicate
-                                        sortDescriptors:(NSArray *)sortDescriptors
-                                     sectionNameKeyPath:(NSString *)sectionNameKeyPath
-                                              cacheName:(NSString *)cacheName
-                                               delegate:(id<NSFetchedResultsControllerDelegate>)delegate
-                                                context:(NSManagedObjectContext *)context;
++ (NSFetchedResultsController *)tom_controllerWithPredicate:(NSPredicate *)predicate
+                                    		  sortDescriptors:(NSArray *)sortDescriptors
+                                         sectionNameKeyPath:(NSString *)sectionNameKeyPath
+                                                  cacheName:(NSString *)cacheName
+                                                   delegate:(id<NSFetchedResultsControllerDelegate>)delegate
+                                                    context:(NSManagedObjectContext *)context;
 
 @end

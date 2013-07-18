@@ -28,7 +28,7 @@
 
 @implementation NSFetchedResultsController (TOMData)
 
-- (BOOL)performFetch
+- (BOOL)tom_performFetch
 {
     __block BOOL fetched = NO;
 

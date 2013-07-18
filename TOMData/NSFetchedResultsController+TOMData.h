@@ -40,6 +40,6 @@
  
  @return `YES` if the fetch executed successfully, otherwise `NO`.
 */
-- (BOOL)performFetch;
+- (BOOL)tom_performFetch;
 
 @end

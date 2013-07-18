@@ -49,7 +49,7 @@
  
  @return A `NSManagedObjectContext` instance.
  */
-+ (NSManagedObjectContext *)rootContext;
++ (NSManagedObjectContext *)tom_rootContext;
 
 /**
  Returns the predefined default managed object context. You should use this context for all your main queue operations. If you need another managed object context that runs on the main queue, use `childContextWithDefaultContext` method to create one.
@@ -58,7 +58,7 @@
  
  @return A `NSManagedObjectContext` instance.
  */
-+ (NSManagedObjectContext *)mainContext;
++ (NSManagedObjectContext *)tom_mainContext;
 
 /**
  Allocates and initializes a new managed object context with the `NSPrivateQueueConcurrencyType` type and *defaultContext* as the parent context.
@@ -67,7 +67,7 @@
  
  @return A newly initialized `NSManagedObjectContext` instance.
  */
-+ (NSManagedObjectContext *)childContextWithMainContext;
++ (NSManagedObjectContext *)tom_childContextWithMainContext;
 
 ///---------------------------------------
 /// @name Creating Managed Object Contexts
@@ -81,8 +81,8 @@
  
  @return A newly initialized `NSManagedObjectContext` instance.
  */
-+ (NSManagedObjectContext *)childContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)type
-                                              parentContext:(NSManagedObjectContext *)parentContext;
++ (NSManagedObjectContext *)tom_childContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)type
+                                                  parentContext:(NSManagedObjectContext *)parentContext;
 
 ///--------------------------------------------------
 /// @name Accessing Managed Object Context Properties
@@ -93,7 +93,7 @@
  
  @return A `NSManagedObjectModel` instance.
  */
-- (NSManagedObjectModel *)managedObjectModel;
+- (NSManagedObjectModel *)tom_managedObjectModel;
 
 ///---------------------
 /// @name Saving Changes
@@ -104,21 +104,21 @@
   
  @return `YES` if the save succeeds, otherwise `NO`.
  */
-- (BOOL)save;
+- (BOOL)tom_save;
 
 /**
  Attempts to commit unsaved changes to registered objects to their persistent store for the receiver and its first parent (if one exists) and handles errors if they occur.
  
  @return `YES` if saves to the receiver and its parent succeed, otherwise `NO`.
  */
-- (BOOL)saveWithParentContext;
+- (BOOL)tom_saveWithParentContext;
 
 /**
  Attempts to commit unsaved changes to registered objects to their persistent store for the receiver and all its parents and handles errors if they occur.
  
  @return `YES` if saves to the receiver and all its parents succeed, otherwise `NO`.
  */
-- (BOOL)saveWithParentContexts;
+- (BOOL)tom_saveWithParentContexts;
 
 ///-----------------------
 /// @name Fetching Objects
@@ -131,7 +131,7 @@
 
  @return An array of objects that meet the criteria specified by request fetched from the receiver and from the persistent stores associated with the receiver’s persistent store coordinator. If an error occurs, returns `nil`. If no objects match the criteria specified by request, returns an empty array.
  */
-- (NSArray *)executeFetchRequest:(NSFetchRequest *)request;
+- (NSArray *)tom_executeFetchRequest:(NSFetchRequest *)request;
 
 /**
  Returns the number of objects a given fetch request would have returned if it had been passed to `executeFetchRequest:`.
@@ -140,7 +140,7 @@
  
  @return The number of objects a given fetch request would have returned if it had been passed to `executeFetchRequest:error:`, or `NSNotFound` if an error occurs.
  */
-- (NSUInteger)countForFetchRequest:(NSFetchRequest *)request;
+- (NSUInteger)tom_countForFetchRequest:(NSFetchRequest *)request;
 
 /**
  Returns the object for the specified ID and handles an error if one occurs.
@@ -149,7 +149,7 @@
  
  @return The object specified by *objectID*. If the object cannot be fetched, or does not exist, or cannot be faulted, it returns `nil`.
  */
-- (NSManagedObject *)existingObjectWithID:(NSManagedObjectID *)objectID;
+- (NSManagedObject *)tom_existingObjectWithID:(NSManagedObjectID *)objectID;
 
 ///-------------------------------------------
 /// @name Performing Actions on Private Queues
@@ -161,14 +161,14 @@
  @param block A block to be executed on the private thread. This block has no return type and takes the private queue managed object context as its sole parameter.
  @param completion A block to be executed on the main thread after the *block* is completed. This block has no return type and takes no parameters.
  */
-- (void)performBlockWithPrivateContext:(void (^)(NSManagedObjectContext *))block
-                            completion:(void (^)())completion;
+- (void)tom_performBlockWithPrivateContext:(void (^)(NSManagedObjectContext *))block
+                                completion:(void (^)())completion;
 
 /**
  Performs a block synchronously on a separate thread with a private context.
  
  @param block A block to be executed on the private thread. This block has no return type and takes the private queue managed object context as its sole parameter.
  */
-- (void)performBlockWithPrivateContextAndWait:(void (^)(NSManagedObjectContext *))block;
+- (void)tom_performBlockWithPrivateContextAndWait:(void (^)(NSManagedObjectContext *))block;
 
 @end
