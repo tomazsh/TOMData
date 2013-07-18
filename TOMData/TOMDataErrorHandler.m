@@ -27,7 +27,7 @@
 
 @interface TOMDataErrorHandler ()
 
-+ (id)_sharedHandler;
++ (instancetype)sharedHandler;
 
 @property(weak, nonatomic) id target;
 @property(nonatomic) SEL action;
@@ -42,13 +42,13 @@
 
 + (void)setTarget:(id)target action:(SEL)action
 {
-    [[self _sharedHandler] setTarget:target];
-    [[self _sharedHandler] setAction:action];
+    [[self sharedHandler] setTarget:target];
+    [[self sharedHandler] setAction:action];
 }
 
 + (void)setBlock:(TOMDataErrorHandlingBlock)block
 {
-    [[self _sharedHandler] setBlock:block];
+    [[self sharedHandler] setBlock:block];
 }
 
 + (void)handleError:(NSError *)error
@@ -59,7 +59,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         NSError *errorCopy = [error copy];
-        TOMDataErrorHandler *handler = [[self class] _sharedHandler];
+        TOMDataErrorHandler *handler = [[self class] sharedHandler];
         
         if (handler.target && handler.action) {
 #pragma clang diagnostic push
@@ -81,12 +81,12 @@
 #pragma mark -
 #pragma mark Private Class Methods
 
-+ (id)_sharedHandler
++ (instancetype)sharedHandler
 {
     static TOMDataErrorHandler *SharedHandler = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        SharedHandler = [[TOMDataErrorHandler alloc] init];
+        SharedHandler = [TOMDataErrorHandler new];
     });
     return SharedHandler;
 }
