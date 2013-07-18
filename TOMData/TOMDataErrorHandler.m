@@ -78,7 +78,7 @@
             sharedHandler.block(errorCopy);
         }
             
-        if (!handler.target && !handler.action && !handler.block) {
+        if ((!handler.target || !handler.action) && !handler.block) {
             NSLog(@"Core Data Error: %@ %@", [error localizedDescription], [error userInfo]);
         }
     });
