@@ -25,12 +25,7 @@
 
 #import "TOMDataErrorHandler.h"
 
-@interface TOMDataErrorHandler () {
-    @private
-    __weak id _target;
-    SEL _action;
-    TOMDataErrorHandlingBlock _block;
-}
+@interface TOMDataErrorHandler ()
 
 + (id)_sharedHandler;
 
