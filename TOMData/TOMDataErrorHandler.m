@@ -30,7 +30,7 @@
 + (instancetype)sharedHandler;
 
 @property (weak, nonatomic) id target;
-@property (nonatomic) SEL action;
+@property (nonatomic) SEL selector;
 @property (copy, nonatomic) TOMDataErrorHandlingBlock block;
 
 @end
@@ -40,10 +40,10 @@
 #pragma mark -
 #pragma mark Class Methods
 
-+ (void)setTarget:(id)target action:(SEL)action
++ (void)setTarget:(id)target selector:(SEL)selector
 {
     [[self sharedHandler] setTarget:target];
-    [[self sharedHandler] setAction:action];
+    [[self sharedHandler] setSelector:selector];
 }
 
 + (void)setBlock:(TOMDataErrorHandlingBlock)block
@@ -61,11 +61,11 @@
         NSError *errorCopy = [error copy];
         TOMDataErrorHandler *handler = [[self class] sharedHandler];
         
-        if (handler.target && handler.action) {
-            NSMethodSignature *methodSignature = [handler.target methodSignatureForSelector:handler.action];
+        if (handler.target && handler.selector) {
+            NSMethodSignature *methodSignature = [handler.target methodSignatureForSelector:handler.selector];
             NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
             [invocation setTarget:handler.target];
-            [invocation setSelector:handler.action];
+            [invocation setSelector:handler.selector];
             [invocation setArgument:&errorCopy atIndex:0];
             [invocation invoke];
         }
@@ -74,7 +74,7 @@
             handler.block(errorCopy);
         }
             
-        if ((!handler.target || !handler.action) && !handler.block) {
+        if ((!handler.target || !handler.selector) && !handler.block) {
             NSLog(@"Core Data Error: %@ %@", [error localizedDescription], [error userInfo]);
         }
     });

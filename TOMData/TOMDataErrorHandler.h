@@ -40,9 +40,9 @@ typedef void(^TOMDataErrorHandlingBlock)(NSError *error);
  Sets target to handle the error and a selector to be performed on `target` on main thread when an error occurs.
  
  @param target Target that will handle the error.
- @param action Selector to be performed on `target` when an error occurs. It takes a `NSError` as the sole argument.
+ @param selector Selector to be performed on `target` when an error occurs. It takes a `NSError` as the sole argument.
  */
-+ (void)setTarget:(id)target action:(SEL)action;
++ (void)setTarget:(id)target selector:(SEL)selector;
 
 /**
  Sets block to be executed on main thread when an error occurs.
