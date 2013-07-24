@@ -66,7 +66,7 @@
             NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
             [invocation setTarget:handler.target];
             [invocation setSelector:handler.selector];
-            [invocation setArgument:&errorCopy atIndex:0];
+            [invocation setArgument:&errorCopy atIndex:2];
             [invocation invoke];
         }
             
