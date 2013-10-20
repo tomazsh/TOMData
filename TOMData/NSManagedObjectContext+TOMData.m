@@ -119,7 +119,7 @@ static NSManagedObjectContext *tom_mainContext = nil;
 - (BOOL)tom_saveWithParentContext
 {
     BOOL saved  = [self tom_save];
-    if ([self parentContext] != tom_rootContext) {
+    if (self != tom_rootContext) {
         saved = saved && [[self parentContext] tom_save];
     }
     return saved;
@@ -128,7 +128,7 @@ static NSManagedObjectContext *tom_mainContext = nil;
 - (BOOL)tom_saveWithParentContexts
 {
     BOOL saved = [self tom_save];
-    if ([self parentContext] != tom_rootContext) {
+    if (self != tom_rootContext) {
         saved = saved && [[self parentContext] tom_saveWithParentContexts];
     }
     return saved;
