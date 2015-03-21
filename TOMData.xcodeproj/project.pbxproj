@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		73EC9DB21ABDE7FE0004F01C /* TOMData.h in Headers */ = {isa = PBXBuildFile; fileRef = 73EC9D511ABDE62B0004F01C /* TOMData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73EC9DB31ABDE8020004F01C /* TOMDataErrorHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 73EC9D521ABDE62B0004F01C /* TOMDataErrorHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73EC9DB41ABDE8060004F01C /* NSManagedObjectContext+TOMData.h in Headers */ = {isa = PBXBuildFile; fileRef = 73EC9D4F1ABDE62B0004F01C /* NSManagedObjectContext+TOMData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73EC9DB51ABDE80D0004F01C /* NSFetchedResultsController+TOMData.h in Headers */ = {isa = PBXBuildFile; fileRef = 73EC9D4B1ABDE62B0004F01C /* NSFetchedResultsController+TOMData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73EC9DB61ABDE8130004F01C /* NSManagedObject+TOMData.h in Headers */ = {isa = PBXBuildFile; fileRef = 73EC9D4D1ABDE62B0004F01C /* NSManagedObject+TOMData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73EC9DB81ABDE82F0004F01C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EC9DB71ABDE82F0004F01C /* CoreData.framework */; };
+		73EC9E2B1ABDF3080004F01C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EC9E2A1ABDF3080004F01C /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		73EC9D4B1ABDE62B0004F01C /* NSFetchedResultsController+TOMData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+TOMData.h"; sourceTree = "<group>"; };
+		73EC9D4C1ABDE62B0004F01C /* NSFetchedResultsController+TOMData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+TOMData.m"; sourceTree = "<group>"; };
+		73EC9D4D1ABDE62B0004F01C /* NSManagedObject+TOMData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+TOMData.h"; sourceTree = "<group>"; };
+		73EC9D4E1ABDE62B0004F01C /* NSManagedObject+TOMData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+TOMData.m"; sourceTree = "<group>"; };
+		73EC9D4F1ABDE62B0004F01C /* NSManagedObjectContext+TOMData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+TOMData.h"; sourceTree = "<group>"; };
+		73EC9D501ABDE62B0004F01C /* NSManagedObjectContext+TOMData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+TOMData.m"; sourceTree = "<group>"; };
+		73EC9D511ABDE62B0004F01C /* TOMData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOMData.h; sourceTree = "<group>"; };
+		73EC9D521ABDE62B0004F01C /* TOMDataErrorHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOMDataErrorHandler.h; sourceTree = "<group>"; };
+		73EC9D531ABDE62B0004F01C /* TOMDataErrorHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOMDataErrorHandler.m; sourceTree = "<group>"; };
+		73EC9D991ABDE7500004F01C /* TOMData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TOMData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73EC9DB71ABDE82F0004F01C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		73EC9E0A1ABDF17E0004F01C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "TOMData/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		73EC9E111ABDF1E20004F01C /* TOMData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TOMData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73EC9E2A1ABDF3080004F01C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		73EC9D951ABDE7500004F01C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73EC9DB81ABDE82F0004F01C /* CoreData.framework in Frameworks */,
+				73EC9E2B1ABDF3080004F01C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73EC9E0D1ABDF1E20004F01C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		73EC9D431ABDE5FE0004F01C = {
+			isa = PBXGroup;
+			children = (
+				73EC9D4A1ABDE62B0004F01C /* TOMData */,
+				73EC9DB91ABDE8350004F01C /* Frameworks */,
+				73EC9D5D1ABDE6820004F01C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		73EC9D4A1ABDE62B0004F01C /* TOMData */ = {
+			isa = PBXGroup;
+			children = (
+				73EC9D511ABDE62B0004F01C /* TOMData.h */,
+				73EC9D521ABDE62B0004F01C /* TOMDataErrorHandler.h */,
+				73EC9D531ABDE62B0004F01C /* TOMDataErrorHandler.m */,
+				73EC9D4B1ABDE62B0004F01C /* NSFetchedResultsController+TOMData.h */,
+				73EC9D4C1ABDE62B0004F01C /* NSFetchedResultsController+TOMData.m */,
+				73EC9D4D1ABDE62B0004F01C /* NSManagedObject+TOMData.h */,
+				73EC9D4E1ABDE62B0004F01C /* NSManagedObject+TOMData.m */,
+				73EC9D4F1ABDE62B0004F01C /* NSManagedObjectContext+TOMData.h */,
+				73EC9D501ABDE62B0004F01C /* NSManagedObjectContext+TOMData.m */,
+				73EC9D9B1ABDE7500004F01C /* Supporting Files */,
+			);
+			path = TOMData;
+			sourceTree = "<group>";
+		};
+		73EC9D5D1ABDE6820004F01C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73EC9D991ABDE7500004F01C /* TOMData.framework */,
+				73EC9E111ABDF1E20004F01C /* TOMData.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		73EC9D9B1ABDE7500004F01C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				73EC9E0A1ABDF17E0004F01C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = "TOMData/Supporting Files";
+			sourceTree = SOURCE_ROOT;
+		};
+		73EC9DB91ABDE8350004F01C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73EC9E2A1ABDF3080004F01C /* Foundation.framework */,
+				73EC9DB71ABDE82F0004F01C /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		73EC9D961ABDE7500004F01C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73EC9DB51ABDE80D0004F01C /* NSFetchedResultsController+TOMData.h in Headers */,
+				73EC9DB61ABDE8130004F01C /* NSManagedObject+TOMData.h in Headers */,
+				73EC9DB41ABDE8060004F01C /* NSManagedObjectContext+TOMData.h in Headers */,
+				73EC9DB21ABDE7FE0004F01C /* TOMData.h in Headers */,
+				73EC9DB31ABDE8020004F01C /* TOMDataErrorHandler.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73EC9E0E1ABDF1E20004F01C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		73EC9D981ABDE7500004F01C /* TOMData (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73EC9DAC1ABDE7500004F01C /* Build configuration list for PBXNativeTarget "TOMData (iOS)" */;
+			buildPhases = (
+				73EC9D941ABDE7500004F01C /* Sources */,
+				73EC9D951ABDE7500004F01C /* Frameworks */,
+				73EC9D961ABDE7500004F01C /* Headers */,
+				73EC9D971ABDE7500004F01C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TOMData (iOS)";
+			productName = "TOMData-iOS";
+			productReference = 73EC9D991ABDE7500004F01C /* TOMData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		73EC9E101ABDF1E20004F01C /* TOMData (OS X) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73EC9E241ABDF1E20004F01C /* Build configuration list for PBXNativeTarget "TOMData (OS X)" */;
+			buildPhases = (
+				73EC9E0C1ABDF1E20004F01C /* Sources */,
+				73EC9E0D1ABDF1E20004F01C /* Frameworks */,
+				73EC9E0E1ABDF1E20004F01C /* Headers */,
+				73EC9E0F1ABDF1E20004F01C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TOMData (OS X)";
+			productName = "TOMData (OS X)";
+			productReference = 73EC9E111ABDF1E20004F01C /* TOMData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		73EC9D441ABDE5FE0004F01C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				TargetAttributes = {
+					73EC9D981ABDE7500004F01C = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					73EC9E101ABDF1E20004F01C = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 73EC9D471ABDE5FE0004F01C /* Build configuration list for PBXProject "TOMData" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 73EC9D431ABDE5FE0004F01C;
+			productRefGroup = 73EC9D5D1ABDE6820004F01C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				73EC9D981ABDE7500004F01C /* TOMData (iOS) */,
+				73EC9E101ABDF1E20004F01C /* TOMData (OS X) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		73EC9D971ABDE7500004F01C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73EC9E0F1ABDF1E20004F01C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		73EC9D941ABDE7500004F01C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73EC9E0C1ABDF1E20004F01C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		73EC9D481ABDE5FE0004F01C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "TOMData/Supporting Files/Info.plist";
+				PRODUCT_NAME = TOMData;
+			};
+			name = Debug;
+		};
+		73EC9D491ABDE5FE0004F01C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "TOMData/Supporting Files/Info.plist";
+				PRODUCT_NAME = TOMData;
+			};
+			name = Release;
+		};
+		73EC9DAD1ABDE7500004F01C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		73EC9DAE1ABDE7500004F01C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		73EC9E251ABDF1E20004F01C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		73EC9E261ABDF1E20004F01C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		73EC9D471ABDE5FE0004F01C /* Build configuration list for PBXProject "TOMData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73EC9D481ABDE5FE0004F01C /* Debug */,
+				73EC9D491ABDE5FE0004F01C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73EC9DAC1ABDE7500004F01C /* Build configuration list for PBXNativeTarget "TOMData (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73EC9DAD1ABDE7500004F01C /* Debug */,
+				73EC9DAE1ABDE7500004F01C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		73EC9E241ABDF1E20004F01C /* Build configuration list for PBXNativeTarget "TOMData (OS X)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73EC9E251ABDF1E20004F01C /* Debug */,
+				73EC9E261ABDF1E20004F01C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 73EC9D441ABDE5FE0004F01C /* Project object */;
+}
